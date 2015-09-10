@@ -27,5 +27,15 @@
     "base-methods": "^0.2.3",
     "define-property": "^0.2.5",
     "lazy-cache": "^0.2.3"
+  },
+  "verb": {
+    "related": {
+      "list": [
+        "template",
+        "templates",
+        "assemble",
+        "verb"
+      ]
+    }
   }
 }
