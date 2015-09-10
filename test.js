@@ -18,17 +18,64 @@ var Page = paginationator.Page;
 describe('paginationator', function () {
   it('should paginate array using defaults', function () {
     var pages = paginationator([
-      {name: 'item-1-1'}, {name: 'item-1-2'}, {name: 'item-1-3'}, {name: 'item-1-4'}, {name: 'item-1-5'}, {name: 'item-1-6'}, {name: 'item-1-7'}, {name: 'item-1-8'}, {name: 'item-1-9'}, {name: 'item-1-10'},
-      {name: 'item-2-1'}, {name: 'item-2-2'}, {name: 'item-2-3'}, {name: 'item-2-4'}, {name: 'item-2-5'}, {name: 'item-2-6'}, {name: 'item-2-7'}, {name: 'item-2-8'}, {name: 'item-2-9'}, {name: 'item-2-10'},
-      {name: 'item-3-1'}, {name: 'item-3-2'}, {name: 'item-3-3'}, {name: 'item-3-4'}, {name: 'item-3-5'}, {name: 'item-3-6'}, {name: 'item-3-7'}, {name: 'item-3-8'}, {name: 'item-3-9'}, {name: 'item-3-10'},
-      {name: 'item-4-1'}, {name: 'item-4-2'}, {name: 'item-4-3'}, {name: 'item-4-4'}, {name: 'item-4-5'}, {name: 'item-4-6'}, {name: 'item-4-7'}, {name: 'item-4-8'}, {name: 'item-4-9'}, {name: 'item-4-10'},
+      {name: 'item-1-1'}, {name: 'item-1-2'}, {name: 'item-1-3'}, {name: 'item-1-4'}, {name: 'item-1-5'},
+      {name: 'item-1-6'}, {name: 'item-1-7'}, {name: 'item-1-8'}, {name: 'item-1-9'}, {name: 'item-1-10'},
+      {name: 'item-2-1'}, {name: 'item-2-2'}, {name: 'item-2-3'}, {name: 'item-2-4'}, {name: 'item-2-5'},
+      {name: 'item-2-6'}, {name: 'item-2-7'}, {name: 'item-2-8'}, {name: 'item-2-9'}, {name: 'item-2-10'},
+      {name: 'item-3-1'}, {name: 'item-3-2'}, {name: 'item-3-3'}, {name: 'item-3-4'}, {name: 'item-3-5'},
+      {name: 'item-3-6'}, {name: 'item-3-7'}, {name: 'item-3-8'}, {name: 'item-3-9'}, {name: 'item-3-10'},
+      {name: 'item-4-1'}, {name: 'item-4-2'}, {name: 'item-4-3'}, {name: 'item-4-4'}, {name: 'item-4-5'},
+      {name: 'item-4-6'}, {name: 'item-4-7'}, {name: 'item-4-8'}, {name: 'item-4-9'}, {name: 'item-4-10'},
     ]);
     pages.should.deepEqual({
       pages: [
-        {current: 1, first: 1, idx: 0, last: 4, next: 2, total: 4, items: [{name: 'item-1-1'}, {name: 'item-1-2'}, {name: 'item-1-3'}, {name: 'item-1-4'}, {name: 'item-1-5'}, {name: 'item-1-6'}, {name: 'item-1-7'}, {name: 'item-1-8'}, {name: 'item-1-9'}, {name: 'item-1-10'}]},
-        {current: 2, first: 1, idx: 1, last: 4, next: 3, prev: 1, total: 4, items: [{name: 'item-2-1'}, {name: 'item-2-2'}, {name: 'item-2-3'}, {name: 'item-2-4'}, {name: 'item-2-5'}, {name: 'item-2-6'}, {name: 'item-2-7'}, {name: 'item-2-8'}, {name: 'item-2-9'}, {name: 'item-2-10'}]},
-        {current: 3, first: 1, idx: 2, last: 4, next: 4, prev: 2, total: 4, items: [{name: 'item-3-1'}, {name: 'item-3-2'}, {name: 'item-3-3'}, {name: 'item-3-4'}, {name: 'item-3-5'}, {name: 'item-3-6'}, {name: 'item-3-7'}, {name: 'item-3-8'}, {name: 'item-3-9'}, {name: 'item-3-10'}]},
-        {current: 4, first: 1, idx: 3, last: 4, prev: 3, total: 4, items: [{name: 'item-4-1'}, {name: 'item-4-2'}, {name: 'item-4-3'}, {name: 'item-4-4'}, {name: 'item-4-5'}, {name: 'item-4-6'}, {name: 'item-4-7'}, {name: 'item-4-8'}, {name: 'item-4-9'}, {name: 'item-4-10'}]}
+        {current: 1, first: 1, idx: 0, last: 4, next: 2, total: 4, items: [
+          {name: 'item-1-1'}, {name: 'item-1-2'}, {name: 'item-1-3'}, {name: 'item-1-4'}, {name: 'item-1-5'},
+          {name: 'item-1-6'}, {name: 'item-1-7'}, {name: 'item-1-8'}, {name: 'item-1-9'}, {name: 'item-1-10'}
+        ]},
+        {current: 2, first: 1, idx: 1, last: 4, next: 3, prev: 1, total: 4, items: [
+          {name: 'item-2-1'}, {name: 'item-2-2'}, {name: 'item-2-3'}, {name: 'item-2-4'}, {name: 'item-2-5'},
+          {name: 'item-2-6'}, {name: 'item-2-7'}, {name: 'item-2-8'}, {name: 'item-2-9'}, {name: 'item-2-10'}
+        ]},
+        {current: 3, first: 1, idx: 2, last: 4, next: 4, prev: 2, total: 4, items: [
+          {name: 'item-3-1'}, {name: 'item-3-2'}, {name: 'item-3-3'}, {name: 'item-3-4'}, {name: 'item-3-5'},
+          {name: 'item-3-6'}, {name: 'item-3-7'}, {name: 'item-3-8'}, {name: 'item-3-9'}, {name: 'item-3-10'}
+        ]},
+        {current: 4, first: 1, idx: 3, last: 4, prev: 3, total: 4, items: [
+          {name: 'item-4-1'}, {name: 'item-4-2'}, {name: 'item-4-3'}, {name: 'item-4-4'}, {name: 'item-4-5'},
+          {name: 'item-4-6'}, {name: 'item-4-7'}, {name: 'item-4-8'}, {name: 'item-4-9'}, {name: 'item-4-10'}
+        ]}
+      ]
+    });
+  });
+
+  it('should paginate array using custom options', function () {
+    var opts = {limit: 25};
+    var pages = paginationator([
+      {name: 'item-1-1'}, {name: 'item-1-2'}, {name: 'item-1-3'}, {name: 'item-1-4'}, {name: 'item-1-5'},
+      {name: 'item-1-6'}, {name: 'item-1-7'}, {name: 'item-1-8'}, {name: 'item-1-9'}, {name: 'item-1-10'},
+      {name: 'item-2-1'}, {name: 'item-2-2'}, {name: 'item-2-3'}, {name: 'item-2-4'}, {name: 'item-2-5'},
+      {name: 'item-2-6'}, {name: 'item-2-7'}, {name: 'item-2-8'}, {name: 'item-2-9'}, {name: 'item-2-10'},
+      {name: 'item-3-1'}, {name: 'item-3-2'}, {name: 'item-3-3'}, {name: 'item-3-4'}, {name: 'item-3-5'},
+      {name: 'item-3-6'}, {name: 'item-3-7'}, {name: 'item-3-8'}, {name: 'item-3-9'}, {name: 'item-3-10'},
+      {name: 'item-4-1'}, {name: 'item-4-2'}, {name: 'item-4-3'}, {name: 'item-4-4'}, {name: 'item-4-5'},
+      {name: 'item-4-6'}, {name: 'item-4-7'}, {name: 'item-4-8'}, {name: 'item-4-9'}, {name: 'item-4-10'},
+    ], opts);
+
+    pages.should.deepEqual({
+      pages: [
+        {current: 1, first: 1, idx: 0, last: 2, next: 2, total: 2, items: [
+          {name: 'item-1-1'}, {name: 'item-1-2'}, {name: 'item-1-3'}, {name: 'item-1-4'}, {name: 'item-1-5'},
+          {name: 'item-1-6'}, {name: 'item-1-7'}, {name: 'item-1-8'}, {name: 'item-1-9'}, {name: 'item-1-10'},
+          {name: 'item-2-1'}, {name: 'item-2-2'}, {name: 'item-2-3'}, {name: 'item-2-4'}, {name: 'item-2-5'},
+          {name: 'item-2-6'}, {name: 'item-2-7'}, {name: 'item-2-8'}, {name: 'item-2-9'}, {name: 'item-2-10'},
+          {name: 'item-3-1'}, {name: 'item-3-2'}, {name: 'item-3-3'}, {name: 'item-3-4'}, {name: 'item-3-5'}
+        ]},
+        {current: 2, first: 1, idx: 1, last: 2, prev: 1, total: 2, items: [
+          {name: 'item-3-6'}, {name: 'item-3-7'}, {name: 'item-3-8'}, {name: 'item-3-9'}, {name: 'item-3-10'},
+          {name: 'item-4-1'}, {name: 'item-4-2'}, {name: 'item-4-3'}, {name: 'item-4-4'}, {name: 'item-4-5'},
+          {name: 'item-4-6'}, {name: 'item-4-7'}, {name: 'item-4-8'}, {name: 'item-4-9'}, {name: 'item-4-10'}
+        ]}
       ]
     });
   });
