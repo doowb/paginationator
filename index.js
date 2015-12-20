@@ -7,7 +7,6 @@
 
 'use strict';
 
-var utils = require('./lib/utils');
 var Pages = require('./lib/pages');
 var Page = require('./lib/page');
 
