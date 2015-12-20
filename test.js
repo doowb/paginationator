@@ -7,7 +7,7 @@
 
 'use strict';
 
-/* deps:mocha */
+require('mocha');
 var assert = require('assert');
 var should = require('should');
 
