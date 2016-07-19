@@ -40,14 +40,14 @@ module.exports = function paginationator(arr, options) {
   var total = Math.ceil(arr.length / limit);
   var i = 0;
 
-  var pages = new Pages(), page = new Page();
+  var pages = new Pages();
   while (i < total) {
+    var page = new Page();
     var start = i * limit;
     var end = start + limit;
     page.items = arr.slice(start, end);
     pages.addPage(page);
     i++;
-    page = new Page();
   }
   return pages;
 };
