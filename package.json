@@ -1,7 +1,7 @@
 {
   "name": "paginationator",
   "description": "Paginate an array into pages of items.",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "homepage": "https://github.com/doowb/paginationator",
   "author": "Brian Woodward (https://github.com/doowb)",
   "repository": "doowb/paginationator",
